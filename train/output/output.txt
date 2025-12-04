@@ -1,0 +1,70 @@
+--- Memuat Data ---
+
+========================================
+[INFO] DISTRIBUSI KELAS EMOSI
+========================================
+Total Jumlah Data: 2195
+emotion
+positif    789
+negatif    716
+netral     690
+Name: count, dtype: int64
+========================================
+
+--- Preprocessing ---
+--- Ekstraksi Fitur ---
+--- Membangun & Melatih Model ---
+
+Epoch 1/50
+
+55/55 [==============================] - 3s 16ms/step - loss: 1.6588 - accuracy: 0.5945 - val_loss: 0.7585 - val_accuracy: 0.7790
+Epoch 2/50
+55/55 [==============================] - 0s 9ms/step - loss: 0.6904 - accuracy: 0.7563 - val_loss: 0.5603 - val_accuracy: 0.8109
+Epoch 3/50
+55/55 [==============================] - 0s 9ms/step - loss: 0.5622 - accuracy: 0.8218 - val_loss: 0.4922 - val_accuracy: 0.8679
+Epoch 4/50
+55/55 [==============================] - 0s 9ms/step - loss: 0.4854 - accuracy: 0.8639 - val_loss: 0.4568 - val_accuracy: 0.8770
+Epoch 5/50
+55/55 [==============================] - 0s 9ms/step - loss: 0.4542 - accuracy: 0.8724 - val_loss: 0.4478 - val_accuracy: 0.8724
+Epoch 6/50
+55/55 [==============================] - 0s 9ms/step - loss: 0.4243 - accuracy: 0.8895 - val_loss: 0.4469 - val_accuracy: 0.8861
+Epoch 7/50
+55/55 [==============================] - 1s 9ms/step - loss: 0.4054 - accuracy: 0.8952 - val_loss: 0.4407 - val_accuracy: 0.8907
+Epoch 8/50
+55/55 [==============================] - 0s 9ms/step - loss: 0.3714 - accuracy: 0.9123 - val_loss: 0.4276 - val_accuracy: 0.8998
+Epoch 9/50
+55/55 [==============================] - 0s 8ms/step - loss: 0.3704 - accuracy: 0.8975 - val_loss: 0.4263 - val_accuracy: 0.8975
+Epoch 10/50
+55/55 [==============================] - 0s 9ms/step - loss: 0.3461 - accuracy: 0.9151 - val_loss: 0.4222 - val_accuracy: 0.8952
+Epoch 11/50
+55/55 [==============================] - 1s 10ms/step - loss: 0.3537 - accuracy: 0.9100 - val_loss: 0.4135 - val_accuracy: 0.8998
+Epoch 12/50
+55/55 [==============================] - 1s 11ms/step - loss: 0.3328 - accuracy: 0.9140 - val_loss: 0.4175 - val_accuracy: 0.8998
+Epoch 13/50
+55/55 [==============================] - 0s 8ms/step - loss: 0.3267 - accuracy: 0.9180 - val_loss: 0.4359 - val_accuracy: 0.9021
+Epoch 14/50
+55/55 [==============================] - 0s 9ms/step - loss: 0.3226 - accuracy: 0.9288 - val_loss: 0.4186 - val_accuracy: 0.9021
+Epoch 15/50
+55/55 [==============================] - 0s 8ms/step - loss: 0.2994 - accuracy: 0.9260 - val_loss: 0.4257 - val_accuracy: 0.9021
+Epoch 16/50
+52/55 [===========================>..] - ETA: 0s - loss: 0.2928 - accuracy: 0.9345Restoring model weights from the end of the best epoch: 11.
+55/55 [==============================] - 0s 9ms/step - loss: 0.2909 - accuracy: 0.9351 - val_loss: 0.4285 - val_accuracy: 0.9043
+Epoch 16: early stopping
+--- Menyimpan Grafik Evaluasi ---
+14/14 [==============================] - 0s 3ms/step
+Grafik disimpan sebagai 'hasil_evaluasi.png'
+--- Menyimpan Data Evaluasi ke Excel ---
+Sukses! Data hasil tersimpan di 'output/laporan_hasil_training.xlsx'
+--- Menyimpan Model & Aset ---
+SELESAI. Semua file berhasil disimpan.
+
+[DETAIL] Classification Report:
+              precision    recall  f1-score   support
+
+     negatif       0.92      0.87      0.89       143
+      netral       0.83      0.91      0.87       138
+     positif       0.95      0.92      0.94       158
+
+    accuracy                           0.90       439
+   macro avg       0.90      0.90      0.90       439
+weighted avg       0.90      0.90      0.90       439
