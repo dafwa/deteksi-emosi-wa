@@ -14,6 +14,8 @@ from tensorflow.keras.callbacks import EarlyStopping # type: ignore
 import joblib
 import os
 
+# Pylance entah kenapa perlu # type: ignore
+
 # Create output folder if it doesn't exist
 output_dir = 'output'
 os.makedirs(output_dir, exist_ok=True)
@@ -66,7 +68,6 @@ class_weights_dict = dict(enumerate(class_weights))
 # ==========================================
 print("--- Ekstraksi Fitur ---")
 
-# --- [PERUBAHAN 1] MENGGUNAKAN N-GRAMS ---
 # ngram_range=(1, 2) artinya membaca 1 kata DAN pasangan 2 kata
 # Contoh: "tidak suka" akan dianggap sebagai fitur tersendiri
 tfidf = TfidfVectorizer(max_features=2000, ngram_range=(1, 2)) 
@@ -90,7 +91,6 @@ X_test_num = X_numeric_scaled[X_test_idx]
 # ==========================================
 print("--- Membangun & Melatih Model ---")
 
-# --- [PERUBAHAN 2] MEMPERBESAR LAYER TEKS ---
 input_text = Input(shape=(X_train_text.shape[1],), name='input_text')
 dense_text = Dense(128, activation='relu', kernel_regularizer=tf.keras.regularizers.l2(0.01))(input_text) # Naik dari 64 ke 128
 dense_text = Dropout(0.5)(dense_text) # Naik dari 0.3 ke 0.5 (Agar tidak overfitting)
@@ -106,7 +106,6 @@ dense_num = Dense(8, activation='relu')(input_num)
 # Fusi
 merged = Concatenate()([dense_text, dense_emoji, dense_num])
 
-# --- [PERUBAHAN 3] MENINGKATKAN DROPOUT DI FUSI ---
 x = Dense(32, activation='relu')(merged)
 x = Dropout(0.4)(x) # Naik dari 0.2 ke 0.4
 output = Dense(3, activation='softmax')(x)
